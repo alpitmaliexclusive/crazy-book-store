@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %} Add Topic {% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% for topic in topics %}
+<div class="col-md-6" style="margin:0 auto;">
+<div class="jumbotron" style="background-color: #9fc9f2;">
+            <h5 class="card-title">{{topic.text}}</h5>
+            <p class="card-text">{{topic.date_added}}</p>
+            <p class="card-text">{{topic.owner}}</p>
+          <a href="{% url 'delete_topic' topic.id %}" class="btn btn-danger">Delete</a>
+          <a href="{% url 'edit_topic' topic.id %}" class="btn btn-warning">Edit</a>
+</div>
+</div>
+{% endfor %}
+{% endblock %}

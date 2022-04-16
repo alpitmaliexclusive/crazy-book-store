@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %} All Reviews {% endblock %}
+{% block content %}
+{% for review in reviews %}
+<div class="col-md-6" style="margin:0 auto;">
+  <div class="jumbotron" style="background-color: #9fc9f2;">
+            <h5 class="card-title">{{review.my_review}}</h5>
+            <p class="card-text">{{review.stars}}</p>
+            <p class="card-text">{{review.unfinished}}</p>
+            <p class="card-text">{{review.date_added}}</p>
+            <p class="card-text">{{review.date_modified}}</p>  
+            <p class="card-text">{{review.book}}</p>
+            <a href="{% url 'delete_review' review.id %}" class="btn btn-danger">Delete</a>
+            <a href="{% url 'edit_review' review.id %}" class="btn btn-warning">Edit</a>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

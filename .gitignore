@@ -1,0 +1,6 @@
+/.idea/
+.vscode/
+/cbc_env/
+__pycache__/
+*.pycheroku create
+/db.sqlite3/

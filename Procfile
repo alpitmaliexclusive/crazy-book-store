@@ -1,0 +1,1 @@
+web: gunicorn crazy_book_club.wsgi --log-file

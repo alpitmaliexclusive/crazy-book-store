@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %} Add Book {% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% for entry in entries %}
+<div class="col-md-6" style="margin:0 auto;">
+<div class="jumbotron" style="background-color: #9fc9f2;">
+      <h5 class="card-title">{{entry.topic}}</h5>
+      <p class="card-text">{{entry.text}}</p>
+      <p class="card-text">{{entry.date_added}}</p>
+    <a href="{% url 'delete_entry' entry.id %}" class="btn btn-danger">Delete</a>
+    <a href="{% url 'edit_entry' entry.id %}" class="btn btn-warning">Edit</a>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}
